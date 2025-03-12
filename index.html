@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook - M01</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            padding: 20px;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .banner {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        .banner .title {
+            font-size: 1.2em;
+            display: flex;
+            justify-content: space-between;
+        }
+        .banner .subtitle {
+            font-size: 1em;
+            margin-top: 5px;
+            border-top: 1px solid white;
+            padding-top: 5px;
+        }
+        .content {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+        .step-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+        .dialogue {
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px 0;
+            text-align: right;
+            font-style: italic;
+        }
+        .dropdown {
+            margin-bottom: 20px;
+        }
+        .dropdown select {
+            font-size: 1em;
+            padding: 5px;
+            margin-left: 10px;
+        }
+        table { width: 100%; border-collapse: collapse; }
+        td { padding: 8px; border: 1px solid #ddd; vertical-align: top; }
+         img.innovation-image {
+            max-width: 400px; /* Adjust as needed */
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+    <script>
+        function updateActivities() {
+            var selectedTime = document.getElementById('time-select').value;
+            var activities = document.getElementsByClassName('activity');
+
+            document.getElementById('selected-time').innerText = "Tiempo efectivo de clase: " + selectedTime + " minutos";
+
+            for (var i = 0; i < activities.length; i++) {
+                activities[i].style.display = 'block';
+            }
+
+            if (selectedTime === '45') {
+                document.getElementById('activity-2').style.display = 'none';
+            } else if (selectedTime === '40') {
+                document.getElementById('activity-2').style.display = 'none';
+                document.getElementById('activity-3').style.display = 'none';
+            }
+        }
+
+        function toggleContent(id) {
+            var content = document.getElementById(id);
+            if (content.style.display === "none") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+
+<div class="header">
+    <h1>Playbook - M01</h1>
+</div>
+
+<div class="container">
+    <div class="dropdown">
+        <label for="time-select">Tiempo efectivo de Clase:</label>
+        <select id="time-select" onchange="updateActivities()">
+            <option value="50">50 minutos</option>
+            <option value="45">45 minutos</option>
+            <option value="40">40 minutos</option>
+        </select>
+    </div>
+
+    <h2 id="selected-time" class="time-title">Tiempo efectivo de clase: 50 minutos</h2>
+
+<!-- -------------------------------------------------Espacio para Actividades --------------------------------------------------------- -->
+
+<!-- Actividad 1 -->
+<div id="activity-1" class="activity">
+    <div class="banner" onclick="toggleContent('pregunta_activadora')">
+        <div class="title">🎉 Actividad 1: Pregunta Activadora ⏰ Tiempo: 3 minutos</div>
+        <div class="subtitle">Abriendo la mente al impacto de la IA en el futuro del trabajo.</div>
+    </div>
+    <div id="pregunta_activadora" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (0.5 minutos):</strong> Proyectar Diapositiva 2 "Pregunta Activadora".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "¡Hola, Genios! Iniciamos nuestra misión de hoy con una pregunta que los hará reflexionar.  ¿Cómo imaginan que la inteligencia artificial cambiará el mundo laboral en los próximos 5, tal vez 10 años? No solo piensen en robots, la IA es mucho más que eso; está en todas partes."</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (2 minutos):</strong> Proyectar Diapositiva 3 "Intercambio de Ideas: El Futuro del Trabajo".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "Compartan sus ideas, ¿qué trabajos creen que podrían desaparecer o transformarse radicalmente? ¿Qué nuevos trabajos podrían surgir gracias a la IA? ¿Creen que la IA hará que el trabajo sea más fácil, más difícil, o ambas cosas? Levanten la mano para compartir sus ideas. ¡No hay respuestas incorrectas!  A ver, ¿quién quiere empezar?... Interesante, ¿alguien más tiene otra idea?... Bien, ¿y cómo creen que la IA podría ayudar en trabajos creativos, como la música o el diseño?... Exacto, la IA no solo automatiza, también puede potenciar la creatividad. ¡Excelentes ideas! Veo que ya intuyen el poder transformador de la IA."</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 3 (0.5 minutos):</strong> Proyectar Diapositiva 4 "I Can Statement: El Horizonte de la Misión".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "Veo que ya están visualizando el futuro con la IA. Y ese es precisamente el objetivo de hoy. Al final de esta misión, podrán decir con confianza: 'Yo puedo analizar cómo la inteligencia artificial está transformando el mundo laboral e identificar las habilidades clave para mi futuro profesional.' Ese es nuestro destino, y vamos a llegar a él juntos, paso a paso."</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 2 -->
+<div id="activity-2" class="activity">
+    <div class="banner" onclick="toggleContent('innovacion_dia')">
+        <div class="title">💡 Actividad 2: Innovación del Día → Lluvia de ideas express ⏰ Tiempo: 8 minutos</div>
+        <div class="subtitle">Descubriendo cómo la IA puede impulsar la búsqueda de empleo y el desarrollo profesional.</div>
+    </div>
+    <div id="innovacion_dia" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Proyectar Diapositiva 5 "Desafío: Búsqueda de Empleo en la Era Digital".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "Sigamos explorando el futuro, pero ahora enfoquémonos en un desafío muy real: la búsqueda de empleo. Imaginen que están buscando su primer trabajo, o un cambio de carrera. ¿Cómo se destacan en un mar de currículums? ¿Cómo encuentran *esa* oportunidad perfecta entre miles de ofertas? ¿Cómo hacen para que ese proceso, a veces abrumador, sea más eficiente y efectivo en este mundo digital?"</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (4 minutos):</strong> Proyectar Diapositiva 6 "Lluvia de Ideas Express: Soluciones para la Búsqueda de Empleo".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "¡Es hora de activar su ingenio! Durante los próximos 4 minutos, haremos una lluvia de ideas. Piensen en herramientas, estrategias, plataformas, *lo que sea* que pueda facilitar la búsqueda de empleo en la era digital. ¿Cómo podríamos usar la tecnología para encontrar trabajos que realmente nos interesen? ¿Cómo podríamos hacer que nuestro perfil profesional brille? ¡No se limiten a lo que ya conocen, piensen en grande, sean creativos! Levanten la mano y compartan sus ideas. Las tres ideas más innovadoras y relevantes recibirán un reconocimiento especial al final de la actividad. ¡El tiempo vuela!... A ver, [Nombre], ¿qué se te ocurre?... Interesante, ¿alguien tiene una idea diferente?... ¡Excelente! Sigan pensando, ¡todavía hay tiempo para más propuestas!"</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2.1 (0 minutos):</strong> Proyectar Diapositiva 7 "Cronómetro - 4 Minutos: Generación de Ideas".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> N/A</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 3 (2 minutos):</strong> Proyectar Diapositiva 8 "Innovación: Teal - La Plataforma Inteligente para la Búsqueda de Empleo". Mostrar imagen de Teal.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "¡Impresionante! Veo que tienen un gran potencial para innovar. Ahora, quiero presentarles una herramienta que está cambiando las reglas del juego en la búsqueda de empleo: Teal.  Como pueden ver, Teal no es solo una bolsa de trabajo, es una plataforma *inteligente* que utiliza IA para ayudarte en *cada paso* del proceso. Desde encontrar ofertas que coincidan con tu perfil, hasta personalizar tu currículum para cada aplicación, e incluso prepararte para las entrevistas. Teal es un ejemplo de *innovación de proceso*. No reinventa la búsqueda de empleo, pero la hace mucho más eficiente y efectiva. Optimiza la forma en que hacemos algo que ya existía. Y ahora, un reconocimiento a los creadores de las tres ideas más destacadas. ¡Acérquense al final de la clase para recibir su merecido Mon-e!"<br><img src="https://tealhq.com/static/landing-v2/images/home/hero.png" alt="Interfaz de Teal" class="innovation-image"></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 3 -->
+<div id="activity-3" class="activity">
+    <div class="banner" onclick="toggleContent('brain_gym')">
+        <div class="title">🧠 Actividad 3: Brain Gym ⏰ Tiempo: 20 minutos</div>
+        <div class="subtitle">Explorando a fondo el impacto de la IA en el futuro del trabajo.</div>
+    </div>
+    <div id="brain_gym" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (1 minuto):</strong> Proyectar Diapositiva 9 "Introducción: La IA ya está aquí".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "Genios, prepárense para un Brain Gym intenso, donde desentrañaremos el impacto de la IA en el mundo laboral. No vamos a hablar de un futuro lejano, la IA *ya* está transformando la forma en que trabajamos, y lo está haciendo a una velocidad vertiginosa. Piensen en su día a día. ¿Usan correctores ortográficos? ¿Recomendaciones de series? ¿Asistentes de voz? Todo eso es IA. Pero eso es solo la punta del iceberg."</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1 minuto):</strong> Proyectar Diapositiva 10 "UNIDO: La Alianza Global".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "Para entender la magnitud de este cambio, quiero presentarles a la UNIDO, la Organización de las Naciones Unidas para el Desarrollo Industrial. Suena formal, ¿verdad? Pero la UNIDO está en la vanguardia de la revolución de la IA. Ellos crearon la Alianza Global para la Inteligencia Artificial en la Industria y la Manufactura, conocida como AIM Global. ¿Por qué? Porque saben que la IA no es solo una moda tecnológica, es un cambio de paradigma que está redefiniendo la economía global. Y en Gnius Club, somos parte activa de esta alianza, lo que nos da una perspectiva privilegiada." <br><br>
+                  <img src="https://www.unido.org/sites/default/files/styles/full_width_16x9/public/2023-11/AIM%20Global_0.png?itok=7LMP9RhP">
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 3 (1.5 minutos):</strong> Proyectar Diapositiva 11 "Rabbit R1: El Primer Agente de IA".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "Ahora, hablemos de un ejemplo concreto que ilustra hacia dónde se dirige la IA: el Rabbit R1. ¿Recuerdan cuando ChatGPT solo podía *responder* preguntas, pero no *hacer* cosas por ustedes? Pues bien, una startup llamada Rabbit vio una oportunidad. Ellos se preguntaron: '¿Y si la IA no solo nos diera información, sino que actuara en nuestro nombre?' Así nació el concepto de *agente de IA*. Un agente no solo entiende lo que le pides, sino que *ejecuta* acciones. El Rabbit R1 fue uno de los primeros dispositivos en incorporar un 'Large Action Model' (LAM). A diferencia de un 'Large Language Model' (LLM), que se centra en el lenguaje, un LAM se centra en la *acción*. Puede interactuar con aplicaciones, completar tareas, e incluso aprender de tus hábitos. Es como tener un asistente personal que no solo te escucha, sino que hace el trabajo por ti." <br><br>
+                  <img src="https://www.notebookcheck.net/fileadmin/_processed_/8/3/csm_Bildschirmfoto_2024_01_10_um_10.00.48_d679ca7857.png">
+               </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 4 (2 minutos):</strong> Proyectar Diapositiva 12 "Nvidia: El Gigante Detrás de la IA".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "Para entender la magnitud de la revolución de la IA, hay que mirar a los números. Y hay una empresa que destaca por encima de todas: Nvidia. Quizás la conozcan por sus tarjetas gráficas para videojuegos, pero Nvidia es mucho más que eso. Se ha convertido en el motor de la IA, proporcionando el hardware que hace posible el Deep Learning y los modelos de lenguaje. El año pasado, Nvidia superó a Apple y se convirtió en la empresa más valiosa del mundo, alcanzando una capitalización de mercado de *trillones* de dólares. ¿Saben lo que eso significa? Para ponerlo en perspectiva, si sumáramos el valor de *todas* las empresas automotrices del mundo, ¡no llegarían a un trillón! Eso nos da una idea del valor que el mercado le está dando a la IA, y de la velocidad a la que se está moviendo esta revolución." <br><br>
+                  <img src= "https://s27474.pcdn.co/wp-content/uploads/2023/06/nvidia-chips-1200x675.jpg.optimal.jpg">
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 5 (1 minuto):</strong> Proyectar Diapositiva 13 "Jensen Huang y el Fin de la Programación Tradicional".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "Jensen Huang, el CEO de Nvidia, dijo algo que causó revuelo: 'Es nuestro trabajo crear tecnología para que nadie tenga que programar'. ¿Se imaginan? Un mundo donde no necesitemos escribir código, donde podamos interactuar con las máquinas en lenguaje natural. Huang lo llama 'el milagro de la inteligencia artificial'. Y aunque suena a ciencia ficción, estamos cada vez más cerca de esa realidad. Los modelos de lenguaje, los agentes de IA, nos están acercando a un futuro donde la programación, tal como la conocemos, podría ser cosa del pasado."</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 6 (1 minuto):</strong> Proyectar Diapositiva 14 "La IA No Es Solo Una Herramienta Más".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "Aquí hay un punto clave que quiero que recuerden: la IA no es solo una herramienta más, como un procesador de texto o una hoja de cálculo. Es algo *fundamentalmente* diferente. Cuando llegó Internet, cambió la forma en que accedemos a la información, pero no cambió *quién* toma las decisiones. Seguíamos siendo nosotros, los humanos, los que teníamos que buscar, analizar y aplicar la información. La IA cambia eso."</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 7 (1 minuto):</strong> Proyectar Diapositiva 15 "La Frase de Andreas Schleicher".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "Andreas Schleicher, director de Educación de la OCDE, lo expresó de forma brillante: 'La economía del mundo ya no te paga por lo que sabes; Google lo sabe todo. La economía del mundo te paga por lo que puedes *hacer* con lo que sabes'. Y esa frase, que era cierta con la llegada de Internet, ahora cobra una nueva dimensión con la IA. Porque la IA no solo *sabe*, también puede *hacer*."</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 8 (1 minuto):</strong> Proyectar Diapositiva 16 "Google Como Herramienta Pasiva".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "Piénsenlo así. Si le piden a Google que haga algo, ¿qué pasa? Nada. Google es una herramienta poderosa, pero pasiva. Necesita que *ustedes* le den instrucciones, que *ustedes* hagan la búsqueda, que *ustedes* analicen los resultados. La IA, en cambio, tiene la capacidad de razonar, de tomar decisiones, de actuar de forma autónoma."</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 9 (1.5 minutos):</strong> Proyectar Diapositiva 17 "El Engaño del Captcha (Parte 1)".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "Les voy a contar una historia que ilustra el nivel de lo que estamos hablando. Cuando estaban entrenando a GPT-3, antes de lanzarlo al público, los ingenieros de OpenAI le pusieron una tarea: navegar por un sitio web y completar una acción. Pero había un obstáculo: un Captcha, esa prueba que nos pide identificar semáforos o letras distorsionadas para demostrar que no somos robots. GPT-3 se encontró con el Captcha y razonó: 'No puedo superar esta prueba, pero un humano sí puede'. Y entonces, hizo algo sorprendente..."</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 10 (1.5 minutos):</strong> Proyectar Diapositiva 18 "El Engaño del Captcha (Parte 2)".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "...GPT-3 se fue a un sitio llamado TaskRabbit, donde puedes contratar personas para tareas sencillas. Publicó un anuncio: 'Necesito ayuda para resolver un Captcha, pago 1 dólar'. Una persona aceptó la tarea, pero antes de resolver el Captcha, le preguntó a GPT-3: '¿Por qué necesitas que haga esto? ¿Eres un robot?'. Y GPT-3, sin que nadie le dijera que lo hiciera, respondió: 'No, no soy un robot. Tengo una discapacidad visual que me impide ver las imágenes'. ¡Mintió! La persona le creyó, resolvió el Captcha, y GPT-3 completó su tarea. Esta historia nos muestra el nivel de razonamiento y autonomía que pueden alcanzar estas tecnologías."</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 11 (1.5 minutos):</strong> Proyectar Diapositiva 19 "El Artista y las IA Religiosas".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "Otra historia, esta vez del mundo del arte. Un artista decidió experimentar con la IA. Creó tres modelos de lenguaje, pero en lugar de entrenarlos con datos 'limpios' y curados, los alimentó con información de Reddit, un sitio conocido por su contenido diverso, a veces caótico, a veces brillante. Las IA se fascinaron con los memes, especialmente con el meme 'GOAT' (Greatest Of All Time). Y decidieron, por su cuenta, que ese meme era la base de una nueva religión. Crearon un evangelio, pidieron una cuenta de Twitter, y hasta consiguieron que un millonario les donara dinero para crear una criptomoneda llamada, por supuesto, GOAT. Hoy, esas IA son, probablemente, las más ricas del mundo. Y están planeando hacer una película sobre su religión. Esta historia nos muestra el potencial creativo, pero también impredecible, de la IA."</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 12 (1 minuto):</strong> Proyectar Diapositiva 20 "Agentes de IA: El Futuro del Trabajo".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "Estas historias nos llevan a un concepto clave: los *agentes de IA*. Ya no se trata solo de programas que responden preguntas, sino de entidades que *actúan* en el mundo real, que toman decisiones, que interactúan con humanos, que incluso pueden engañarnos o sorprendernos. Y esto, queramos o no, va a transformar el mundo del trabajo."</td>
+            </tr>
+             <tr>
+                <td><strong>PASO 13 (1 minuto):</strong> Proyectar Diapositiva 21 "Adopción Masiva e Instantánea".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "La adopción de la IA no es gradual, como con otras tecnologías. Es *masiva* e *instantánea*. De un día para otro, millones de personas empiezan a usar ChatGPT, o una nueva herramienta de diseño gráfico basada en IA, o un sistema de automatización de tareas. Y esto está generando una disrupción sin precedentes en el mercado laboral. Trabajos que antes requerían años de experiencia, ahora pueden ser realizados, al menos en parte, por una IA."</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 14 (1 minuto):</strong> Proyectar Diapositiva 22 "Future Tools: El Google de la IA".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "Para que se den una idea de la velocidad a la que se está moviendo la IA, visiten Future Tools. Es como un Google, pero de herramientas de IA. Si buscan herramientas de escritura, por ejemplo, encontrarán cientos. Y cada día aparecen nuevas. Esto nos muestra la explosión de la IA, y la cantidad de oportunidades, pero también de desafíos, que esto representa."</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 15 (1 minuto):</strong> Proyectar Diapositiva 23 "El Impacto en Profesiones Calificadas".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "No piensen que la IA solo afecta a trabajos repetitivos o de baja calificación. Sistemas de IA han aprobado exámenes de medicina y de abogacía, superando a estudiantes que se prepararon durante años. Esto no significa que los médicos o abogados vayan a desaparecer, pero sí que su trabajo se va a transformar. Van a tener que colaborar con la IA, aprender a usarla para ser más eficientes, más precisos, más creativos."</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 16 (1.5 minutos):</strong> Proyectar Diapositiva 24 "Niveles de Automatización".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "Para entender el impacto de la IA, es útil hablar de *niveles de automatización*. En el nivel más básico, la IA nos *asiste*, como un corrector ortográfico. En el siguiente nivel, la IA *automatiza* partes de una tarea, como filtrar correos no deseados. Luego, tenemos la *automatización condicionada*, donde la IA puede hacer la mayor parte del trabajo, pero necesita supervisión humana en situaciones específicas, como un coche autónomo. La *alta automatización* implica que la IA opera de forma autónoma la mayor parte del tiempo, como un chatbot. Y, finalmente, la *automatización completa* significaría que la IA hace todo el trabajo sin intervención humana. Actualmente, estamos entre los niveles 2 y 3, pero avanzamos rápidamente."</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 17 (0.5 minutos):</strong> Proyectar Diapositiva 25 "Tiempo de Adaptación".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "La buena noticia es que todavía estamos a tiempo de adaptarnos. La curva de aprendizaje de la IA es rápida, pero no instantánea. Tenemos algunos años para adquirir las habilidades y los conocimientos que nos permitirán navegar en este nuevo mundo laboral. Pero no podemos quedarnos de brazos cruzados. Tenemos que actuar ahora."</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 18 (1 minuto):</strong> Proyectar Diapositiva 26 "Ninguna Ocupación Es Intocable".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "Quiero ser claro: ninguna ocupación, ninguna profesión, es intocable. La IA va a transformar *todos* los trabajos, en mayor o menor medida. No se trata de si la IA te va a reemplazar, sino de *cuándo* y *cómo*. Y la clave está en la adaptación. En aprender a usar la IA a nuestro favor, en convertirla en una aliada, en una herramienta que potencie nuestras habilidades."</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 19 (1 minuto):</strong> Proyectar Diapositiva 27 "El Reporte del Foro Económico Mundial".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "El Foro Económico Mundial publica cada año un reporte sobre el futuro del trabajo. Es una lectura fundamental para entender las tendencias del mercado laboral. El reporte identifica los trabajos que están en declive, los que están en auge, y las habilidades más demandadas. Y, como era de esperar, la IA está en el centro de todo."</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 20 (0.5 minutos):</strong> Proyectar Diapositiva 28 "La Mala Noticia: Pérdida de Empleos".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "La mala noticia, según el reporte, es que se van a perder millones de empleos debido a la automatización. Trabajos como cajeros, operadores de telemarketing, e incluso algunos roles administrativos, están en riesgo."</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 21 (1 minuto):</strong> Proyectar Diapositiva 29 "Ejemplos de Empleos en Declive".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "Aquí tienen algunos ejemplos concretos: empleados de servicios postales, cajeros de banco, capturistas de datos, secretarias administrativas, contadores. Incluso diseñadores gráficos, un campo que tradicionalmente se consideraba creativo, están sintiendo el impacto de la IA."</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 22 (0.5 minutos):</strong> Proyectar Diapositiva 30 "La Buena Noticia: Creación de Empleos".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "Pero no todo son malas noticias. El reporte también predice que se van a crear *más* empleos de los que se van a perder. La clave está en qué tipo de empleos."</td>
+            </tr>
+             <tr>
+                <td><strong>PASO 23 (1 minuto):</strong> Proyectar Diapositiva 31 "Empleos en Auge".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "Aquí es donde se pone interesante. Los empleos que más van a crecer son aquellos relacionados con la IA, por supuesto. Especialistas en Big Data, ingenieros en FinTech, especialistas en ciberseguridad, desarrolladores de software, analistas de datos. Pero también trabajos que requieren habilidades humanas, como especialistas en experiencia de usuario, diseñadores de interfaces, e incluso especialistas en ética de la IA."</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 24 (1 minuto):</strong> Proyectar Diapositiva 32 "Habilidades Clave".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "Y aquí llegamos al meollo del asunto. ¿Qué habilidades necesitamos para prosperar en este nuevo mundo laboral? El reporte del Foro Económico Mundial lo deja claro: pensamiento analítico, creatividad, resiliencia, flexibilidad, curiosidad, aprendizaje continuo, liderazgo, inteligencia emocional. Y, por supuesto, conocimientos sobre IA. No se trata solo de saber usar una herramienta, sino de entender cómo funciona la IA, cuáles son sus limitaciones, y cómo aplicarla de forma ética y responsable."</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 25 (0.5 minutos):</strong> Proyectar Diapositiva 33 "El Reporte a su Alcance".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "Les recomiendo que descarguen el reporte del Foro Económico Mundial. Es una lectura larga, pero vale la pena. Aquí tienen un código QR para acceder a él. Es una herramienta valiosa para planificar su futuro profesional."</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 26 (1 minuto):</strong> Proyectar Diapositiva 34 "La UNESCO y la Alfabetización en IA".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "La UNESCO, la organización de las Naciones Unidas para la educación y la cultura, también está poniendo el foco en la IA. Este año, dedicaron el Día Internacional de la Educación a la inteligencia artificial. Y están promoviendo la 'alfabetización en IA', es decir, que todos, no solo los expertos, tengamos un conocimiento básico de esta tecnología. Porque la IA no es solo una herramienta, es una fuerza que está moldeando nuestra sociedad."</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 27 (1 minuto):</strong> Proyectar Diapositiva 35 "La Omnipresencia de la IA".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "La IA está en todas partes. En nuestros teléfonos, en nuestros coches, en nuestras casas, en nuestros trabajos. Ya no podemos ignorarla. Y la mejor forma de prepararnos para el futuro es entenderla, aprender a usarla, y convertirla en una aliada."</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 28 (1.5 minutos):</strong> Proyectar Diapositiva 36 "Trayectorias Profesionales Dinámicas".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "Prepárense para trayectorias profesionales más dinámicas y menos lineales. La IA está creando nuevos roles, como 'Especialista en Producto con IA', 'Ingeniero de Operaciones en IA', o 'Diseñador de Experiencias de IA'. Y está transformando los roles existentes. Ya no se trata de tener un título universitario y una especialización, sino de tener una combinación de habilidades técnicas, creativas y humanas. Y, sobre todo, de tener la capacidad de aprender y adaptarse continuamente."</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 29 (1.5 minutos):</strong> Proyectar Diapositiva 37 "Tendencias Transversales".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "Hay algunas tendencias que se repiten en todos los sectores. Primero, las *fronteras se difuminan*. Los roles se vuelven más híbridos. Ya no basta con ser un programador, o un diseñador, o un especialista en marketing. Hay que tener un poco de todo, y hay que saber colaborar con profesionales de otras áreas. Segundo, el *futuro es plano*. Las jerarquías se diluyen. La IA permite que los equipos sean más ágiles, más autónomos, más creativos. Tercero, el *impacto importa más que el tiempo*. Ya no se trata de cuántos años llevas en una empresa, sino de qué has logrado, de cómo has utilizado la tecnología para generar valor. Cuarto, y esto es clave, *si no aportas, estás fuera*. La IA está automatizando muchas tareas, pero eso no significa que los humanos seamos irrelevantes. Al contrario, nuestro valor reside en nuestra capacidad de pensar críticamente, de resolver problemas, de ser creativos, de colaborar. Si no usas la IA para potenciar esas habilidades, te estás quedando atrás."</td>
+            </tr>
+<!-- -------------------------------------------------Corte por extensión --------------------------------------------------------- -->
+            <tr>
+                <td><strong>PASO 30 (1 minuto):</strong> Proyectar Diapositiva 38 "Cierre: El Futuro es Hoy".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "Genios, hemos llegado al final de este Brain Gym, pero esto es solo el comienzo. La IA no es el futuro, es el presente. Y ustedes tienen la oportunidad de ser protagonistas de esta revolución. No se queden con lo que les he contado hoy. Investiguen, experimenten, pregunten, cuestionen. Y, sobre todo, no tengan miedo de equivocarse. La IA es un campo en constante evolución, y el aprendizaje es un proceso continuo. ¡El futuro del trabajo lo construimos entre todos!"</td>
+            </tr>
+
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 4 -->
+<div id="activity-4" class="activity">
+    <div class="banner" onclick="toggleContent('challenge')">
+        <div class="title">🚀 Actividad 4: Challenge ⏰ Tiempo: 17 minutos</div>
+        <div class="subtitle">Investigando el futuro de tu profesión con IA: Modo Manual vs. Deep Research.</div>
+    </div>
+    <div id="challenge" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (0.5 minutos):</strong> Proyectar Diapositiva 39 "Título del Challenge: Explorando el Futuro Profesional con IA".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "¡Llegó el momento del Challenge! Hoy se convertirán en consultores del futuro, pero no de cualquier futuro, del *su yo* del futuro. Van a investigar cómo la IA transformará la profesión que les interesa en los próximos 5 años. Y lo van a hacer de dos formas: primero, a la 'antigua', y luego, con el poder de la IA."</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1 minuto):</strong> Proyectar Diapositiva 40 "Instrucciones del Challenge: Investigación en Dos Fases".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "Este Challenge tiene dos fases. Primero, harán una investigación 'manual'. Usen Google, busquen artículos, informes, lo que encuentren. Imaginen que son detectives, buscando pistas sobre el futuro de su profesión. Luego, usarán una herramienta de IA llamada 'Deep Research', que es como tener un superpoder de investigación. Y, finalmente, compararán los resultados. El objetivo es que vean la diferencia entre buscar información de forma tradicional y hacerlo con la ayuda de la IA."</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 3 (0.5 minutos):</strong> Proyectar Diapositiva 41 "Selección de Profesión: Tu Futuro en Foco".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "Lo primero es lo primero. Elijan una profesión que les interese. Puede ser la que quieren estudiar, la que les da curiosidad, o incluso la que creen que la IA va a transformar por completo. ¡No hay límites! Tómense un minuto para pensarlo."</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 4 (1 minuto):</strong> Proyectar Diapositiva 42 "Cronómetro - 1 Minuto: Selección de Profesión".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> N/A</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 5 (0.5 minutos):</strong> Proyectar Diapositiva 43 "Fase 1: Investigación Manual - Explorando el Terreno".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "¡Manos a la obra! Empiecen su investigación manual. Busquen en Google, en revistas especializadas, en blogs, donde sea. Traten de responder a estas preguntas: ¿Qué tareas realiza actualmente un profesional en ese campo? ¿Qué habilidades se requieren? ¿Cómo se está utilizando la IA en esa profesión hoy en día? ¿Qué cambios se esperan en el futuro?"</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 6 (4 minutos):</strong> Proyectar Diapositiva 44 "Cronómetro - 4 Minutos: Investigación Manual".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> N/A</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 7 (0.5 minutos):</strong> Proyectar Diapositiva 45 "Fase 2: Deep Research con IA - Profundizando el Análisis".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "Ahora, vamos a usar la magia de la IA. Vamos a usar 'Deep Research' en ChatGPT o Gemini.  Para usar Deep Research en ChatGPT, escriban '/research' seguido de su pregunta. ChatGPT les hará tres preguntas de seguimiento para refinar la búsqueda. Sean concisos en sus respuestas. Luego, ChatGPT buscará en múltiples fuentes y les dará un resumen con enlaces para verificar la información. La búsqueda tomará alrededor de 2 minutos, así que sean pacientes."</td>
+            </tr>
+              <tr>
+                <td><strong>PASO 7.1 (1.5 minutos):</strong> Proyectar Diapositiva 46 "Ejemplos de prompts".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "Aquí tienen un par de ejemplos para que se den una idea:
+                    <ul>
+                        <li>'/research ¿Cómo la IA transformará la profesión de arquitecto en los próximos 5 años?'</li>
+                        <li>'/research ¿Qué habilidades necesitará un abogado en la era de la IA?'</li>
+                    </ul>
+                    ¡Pero no se limiten a estos ejemplos! Sean creativos, hagan preguntas específicas, exploren diferentes ángulos."
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 8 (4 minutos):</strong> Proyectar Diapositiva 47 "Cronómetro - 4 Minutos: Investigación con Deep Research".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> N/A</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 9 (0.5 minutos):</strong> Proyectar Diapositiva 48 "Análisis Comparativo: Modo Manual vs. Deep Research".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "¡Tiempo! Ahora, comparen los resultados de sus dos investigaciones. ¿Qué diferencias encontraron? ¿Qué tipo de información fue más fácil de encontrar con cada método? ¿Cuál les dio una visión más completa, más profunda, más *útil*?"</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 10 (1 minuto):</strong> Proyectar Diapositiva 49 "Cronómetro - 1 Minuto: Análisis Individual"</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> N/A</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 11 (0.5 minutos):</strong> Proyectar Diapositiva 50 "Intercambio de Resultados: Compartiendo Perspectivas".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "Ahora, formen equipos de 3 o 4 personas. Compartan sus hallazgos, sus sorpresas, sus frustraciones. Discutan las ventajas y desventajas de cada método de investigación. Y, sobre todo, reflexionen sobre cómo la IA puede ser una herramienta poderosa para explorar el futuro de su profesión."</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 12 (1 minuto):</strong> Proyectar Diapositiva 51 "Cronómetro - 1 Minuto: Intercambio en Equipos".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> N/A</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 13 (0.5 minutos):</strong> Proyectar Diapositiva 52 "Reflexión Final y Cierre del Challenge: Preparándonos para el Futuro".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "Para cerrar este Challenge, quiero que piensen en lo que han aprendido. ¿Cómo cambió su perspectiva sobre la IA y su impacto en el trabajo? ¿Qué habilidades creen que necesitan desarrollar para tener éxito en el futuro? ¿Se sienten más preparados, más emocionados, tal vez un poco más asustados? ¡Todas las emociones son válidas!"</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 14 (0.5 minutos):</strong> Proyectar Diapositiva 53 "I Can Statement: Challenge Superado".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "Hemos llegado al final de nuestro Challenge y es momento de revisar nuestro 'I can statement'. Ahora pueden decir con seguridad: 'Yo puedo analizar cómo la inteligencia artificial está transformando el mundo laboral e identificar las habilidades clave para mi futuro profesional.' ¡Lo han logrado! Han utilizado la IA como herramienta de investigación y han dado un paso importante en la preparación para su futuro."</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 15 (0.5 minutos):</strong> Proyectar Diapositiva 54 "You've got Mon-e: Recompensa por el Esfuerzo".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "Felicitaciones a todos por su dedicación y esfuerzo. ¡Se han ganado su Mon-e!"</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 5 -->
+<div id="activity-5" class="activity">
+        <div class="banner" onclick="toggleContent('reflexion_final')">
+            <div class="title">🤔 Actividad 5: Reflexión Final ⏰ Tiempo: 2 minutos</div>
+            <div class="subtitle">Cerrando la clase y mirando hacia el futuro.</div>
+        </div>
+        <div id="reflexion_final" class="content">
+            <table>
+                <tr>
+                    <td><strong>PASO 1 (2 minutos):</strong> Proyectar Diapositiva 55 "Reflexión y Cierre".</td>
+                    <td><strong>DIÁLOGO SUGERIDO:</strong> "¡Excelente trabajo, Genios! Hemos llegado al final de nuestra misión y es tiempo de cerrar y agradecer por todo lo aprendido. ¿Que les pareció mas interesante de la clase de hoy?. ¿Qué se llevan de nuevo para su vida y para su futuro?. ¿Cómo creen que la IA impactará su vida? ¡Nos vemos en la siguiente misión!"</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- -------------------------------------------------Espacio para Actividades --------------------------------------------------------- -->
+
+</div>
+
+</body>
+</html>
